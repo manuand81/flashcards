@@ -1,11 +1,11 @@
-/* Resetando algumas configurações padrões */
+/* Resetando margens e padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo para o corpo da página */
+/* Estilização do corpo */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -13,15 +13,15 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     color: #333;
+    flex-direction: column;
 }
 
 /* Cabeçalho */
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 2em;
+    text-align: center;
 }
 
 /* Estilo do container dos cartões */
@@ -29,61 +29,59 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 1000px;
-    width: 100%;
+    width: 80%;
+    max-width: 1200px;
 }
 
-/* Estilo de cada flashcard */
+/* Estilo do cartão */
 .cartao {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px; /* Para permitir a rotação 3D */
 }
 
-.cartao:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Estilos do conteúdo do cartão */
 .cartao__conteudo {
-    padding: 20px;
+    width: 250px;
+    height: 250px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
 }
 
-/* Pergunta */
-.cartao__conteudo__pergunta {
-    display: block;
+.cartao__frente, .cartao__verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Para esconder o verso durante a rotação */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    border-radius: 10px;
 }
 
-.cartao__conteudo__pergunta p {
-    font-size: 1.2em;
-    font-weight: bold;
+.cartao__frente {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Resposta */
-.cartao__conteudo__resposta {
-    display: none;
-    font-size: 1em;
-    margin-top: 10px;
-    color: #444;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.cartao__verso {
+    background-color: #f9f9f9;
+    color: #333;
+    transform: rotateY(180deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.cartao.show .cartao__conteudo__resposta {
-    display: block;
-    opacity: 1;
+.cartao.flipped .cartao__conteudo {
+    transform: rotateY(180deg); /* Gira o cartão */
 }
 
 /* Estilo do rodapé */
 footer {
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.8em;
+    font-size: 0.9em;
     color: #666;
+    text-align: center;
 }
