@@ -1,45 +1,128 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flashcards Pitágoras</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - Teorema de Pitágoras</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Estudo de Flashcards sobre Pitágoras</h1>
-    <div class="grid">
-      <div class="card" data-content="O Teorema de Pitágoras afirma que, em um triângulo retângulo, o quadrado da hipotenusa é igual à soma dos quadrados dos catetos.">
-        <div class="card-content">#1</div>
-      </div>
-      <div class="card" data-content="A fórmula para calcular a hipotenusa é: h² = a² + b²">
-        <div class="card-content">#2</div>
-      </div>
-      <div class="card" data-content="A hipotenusa é o lado oposto ao ângulo de 90 graus.">
-        <div class="card-content">#3</div>
-      </div>
-      <div class="card" data-content="Se a² = 9 e b² = 16, qual o valor de h?">
-        <div class="card-content">#4</div>
-      </div>
-      <div class="card" data-content="Pitágoras foi um filósofo grego e matemático do século VI a.C.">
-        <div class="card-content">#5</div>
-      </div>
-      <div class="card" data-content="Um exemplo prático é: 3² + 4² = 5²">
-        <div class="card-content">#6</div>
-      </div>
-      <div class="card" data-content="A fórmula pode ser usada para encontrar distâncias em um plano cartesiano.">
-        <div class="card-content">#7</div>
-      </div>
-      <div class="card" data-content="A relação é válida para qualquer triângulo retângulo.">
-        <div class="card-content">#8</div>
-      </div>
-      <div class="card" data-content="O Teorema tem várias aplicações em engenharia, arquitetura e física.">
-        <div class="card-content">#9</div>
-      </div>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+    <main>
+        <h1>Flashcards - Teorema de Pitágoras</h1>
+        <section id="container">
+            <!-- Flashcard 1 -->
+            <article class="cartao" onclick="toggleResposta(this)">
+                <div class="cartao__conteudo">
+                    <h3>O que é o Teorema de Pitágoras?</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        <p>O que é o Teorema de Pitágoras?</p>
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        <p>O teorema afirma que em um triângulo retângulo, o quadrado da hipotenusa é igual à soma dos quadrados dos catetos: <br> a² + b² = c²</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 2 -->
+            <article class="cartao" onclick="toggleResposta(this)">
+                <div class="cartao__conteudo">
+                    <h3>Exemplo de Cálculo</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        <p>Se os catetos de um triângulo retângulo têm 3 e 4 unidades, qual é o valor da hipotenusa?</p>
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        <p>Usando o teorema de Pitágoras: <br> 3² + 4² = c² <br> 9 + 16 = 25 <br> c = 5 unidades</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 3 -->
+            <article class="cartao" onclick="toggleResposta(this)">
+                <div class="cartao__conteudo">
+                    <h3>Aplicação Prática</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        <p>Onde o Teorema de Pitágoras pode ser aplicado?</p>
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        <p>Ele é utilizado em áreas como construção civil, navegação, física e até na geometria computacional.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 4 -->
+            <article class="cartao" onclick="toggleResposta(this)">
+                <div class="cartao__conteudo">
+                    <h3>Calculando a Hipotenusa</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        <p>Se os catetos de um triângulo retângulo têm 5 e 12 unidades, qual é a hipotenusa?</p>
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        <p>5² + 12² = c² <br> 25 + 144 = 169 <br> c = √169 <br> c = 13 unidades</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 5 -->
+            <article class="cartao" onclick="toggleResposta(this)">
+                <div class="cartao__conteudo">
+                    <h3>Teorema e Distâncias</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        <p>O Teorema de Pitágoras pode ser usado para calcular distâncias em qual situação?</p>
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        <p>Ele pode ser usado para calcular a distância direta entre dois pontos em um plano cartesiano, quando se conhece as distâncias horizontais e verticais entre eles.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 6 -->
+            <article class="cartao" onclick="toggleResposta(this)">
+                <div class="cartao__conteudo">
+                    <h3>Teorema de Pitágoras e Física</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        <p>Como o Teorema de Pitágoras é utilizado na física?</p>
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        <p>Ele é utilizado para calcular a velocidade resultante de dois vetores perpendiculares, como no movimento de projéteis.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 7 -->
+            <article class="cartao" onclick="toggleResposta(this)">
+                <div class="cartao__conteudo">
+                    <h3>Relógios e o Teorema</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        <p>Como o Teorema de Pitágoras se aplica em relógios analógicos?</p>
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        <p>Ele pode ser usado para calcular a distância entre as pontas dos ponteiros em um relógio, tratando os ponteiros como catetos e a linha entre eles como a hipotenusa.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 8 -->
+            <article class="cartao" onclick="toggleResposta(this)">
+                <div class="cartao__conteudo">
+                    <h3>Tríades Pitagóricas</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        <p>Quais são as tríades pitagóricas mais comuns?</p>
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        <p>Exemplos: (3, 4, 5), (5, 12, 13), (7, 24, 25) são algumas das tríades pitagóricas que satisfazem a equação a² + b² = c².</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 9 -->
+            <article class="cartao" onclick="toggleResposta(this)">
+                <div class="cartao__conteudo">
+                    <h3>Teorema de Pitágoras e Arquitetura</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        <p>Como o Teorema de Pitágoras é utilizado na arquitetura?</p>
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        <p>Na construção de rampas e escadas, para calcular ângulos e distâncias de forma precisa, utilizando os catetos e a hipotenusa.</p>
+                    </div>
+                </div>

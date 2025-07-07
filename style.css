@@ -1,51 +1,82 @@
+/* Resetando algumas configurações padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
+    background-color: #f4f4f9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    color: #333;
 }
 
-.flashcards-container {
+/* Cabeçalho */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Estilo do container dos cartões */
+#container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
 }
 
-.flashcard {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-.flashcard .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 10px;
-    text-align: center;
-    font-size: 16px;
+/* Estilo de cada flashcard */
+.cartao {
+    background-color: #fff;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.flashcard .question {
-    background-color: #ff66b2;
-    color: white;
-}
-
-.flashcard .answer {
-    background-color: #800080;
-    color: white;
-    display: none;
-}
-
-.flashcard:hover {
+.cartao:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos do conteúdo do cartão */
+.cartao__conteudo {
+    padding: 20px;
+}
+
+/* Pergunta */
+.cartao__conteudo__pergunta {
+    display: block;
+}
+
+.cartao__conteudo__pergunta p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Resposta */
+.cartao__conteudo__resposta {
+    display: none;
+    font-size: 1em;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* Estilo do rodapé */
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #666;
 }
