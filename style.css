@@ -69,6 +69,13 @@ h1 {
     font-size: 1em;
     margin-top: 10px;
     color: #444;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cartao.show .cartao__conteudo__resposta {
+    display: block;
+    opacity: 1;
 }
 
 /* Estilo do rodapé */
